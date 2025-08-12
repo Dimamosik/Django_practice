@@ -4,8 +4,32 @@
 
 
 {% block content %}
-    <h1>Contact page</h1>
-    <p>Contatcs:</p>
+    <section class="contact-section">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or want to get in touch, feel free to fill out the form below or reach us via email and phone.</p>
+
+  <div class="contact-container">
+    <form class="contact-form" action="#" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p>Email: <a href="mailto:konskiidima@gmail.com">konskiidima@gmail.com</a></p>
+      <p>Phone: +48(234)567-890</p>
+      <p>Address: 123 Blah Street, Warsaw, Poland</p>
+    </div>
+  </div>
+</section>
 
    
 {% endblock %}
