@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1>{{ object.title }}</h1>
+    <p>By {{ object.author.username }} | {{ object.created_at }}</p>
+    <p>{{ object.content }}</p>
+
+    {% if request.user == object.author %}
+        <a href="{% url 'news_update' object.pk %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'news_delete' object.pk %}" class="btn btn-danger">Delete</a>
+    {% endif %}
+</div>
+{% endblock %}

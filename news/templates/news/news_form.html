@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% block title %}Create / Edit News{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1>{% if object %}Edit{% else %}Create{% endif %} News</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+{% endblock %}

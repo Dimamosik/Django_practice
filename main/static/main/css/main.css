@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     background: #F9FAFB; 
     color: #2E2E2E; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
 
 .wrapper {
@@ -19,11 +19,11 @@ body {
 }
 
 aside {
-    background: #181818;
+    background: #1F2937;
     width: 20%;
     padding: 2.5%;
     color: #fff;
-    border-right: 5px solid #4d4d4d;
+    border-right: 3px solid #1662a5;
    
     display: flex;
     flex-direction: column;
@@ -54,6 +54,7 @@ aside ul {
     margin-top: 20px;
 }
 
+
 aside ul li a {
     color: #fff;
     display: block;
@@ -70,15 +71,24 @@ aside ul li a:hover {
 
 main {
     flex: 1;
+    display: flex;              
+    flex-direction: column;     
+    justify-content: center;    
+    align-items: center;       
     color: #2E2E2E;
-    padding: 100px 40px 40px 40px;
-    text-align: left;
-    background: #fff;
+    padding: 40px;             
+    text-align: center;         
+    background: #fff
 }
 
 main .features {
-    max-width: 600px;
-    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    text-align: center;
 }
 
 main .features h1 {
@@ -96,7 +106,7 @@ main .features p {
 }
 
 a.button, button {
-    background-color: #FB8C00; 
+    background-color: #2563EB ; 
     color: #fff;
     padding: 12px 24px;
     border: none;
@@ -106,17 +116,29 @@ a.button, button {
     transition: background-color 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    
+    
 }
 
 a.button:hover, button:hover {
-    background-color: #e67600;
+    background-color: #1E40AF;
 }
 
+
 .site-footer {
-    background-color: #000;
-    color: #fff;
+    background: linear-gradient(to top, #0d1b2a, #1b263b);
+   
+    color: #aaaaaa;
     padding: 20px 0;
     text-align: center;
+    
+}
+.site-footer a {
+    color: #90caf9;
+    transition: color 0.3s ease;
+}
+.site-footer a:hover {
+    color: #ffffff;
 }
 
 .footer-content {
@@ -135,7 +157,7 @@ a.button:hover, button:hover {
 }
 
 .social-icons a:hover {
-    color: #1E88E5;
+    color: #FB8C00;
 }
 
 .footer-nav {
@@ -241,7 +263,7 @@ a.button:hover, button:hover {
 }
 
 .contact-form button {
-    background-color: #FB8C00;
+    background-color: #2563EB;
     color: #fff;
     padding: 14px;
     border: none;
@@ -252,7 +274,7 @@ a.button:hover, button:hover {
 }
 
 .contact-form button:hover {
-    background-color: #e67600;
+    background-color: #1E40AF;
 }
 
 .contact-info {
