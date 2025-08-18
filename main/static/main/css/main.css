@@ -1,15 +1,31 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+.fa, .fas, .far, .fal, .fad {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; 
+}
+
+.fab {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400; 
+}
+
 html, body {
     height: 100%;
-    margin: 0;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #F9FAFB; 
-    color: #2E2E2E; 
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
 }
 
 .wrapper {
@@ -32,7 +48,8 @@ aside {
 }
 
 aside img {
-    width: 80px;
+    width: 10vw; 
+    height: auto;
 }
 
 aside .logo {
@@ -63,10 +80,16 @@ aside ul li a {
     text-decoration: none;
 }
 
-aside ul li:hover a,
-aside ul li a:hover {
-    color: #1E88E5; 
-    transform: scale(1.05);
+aside {
+  ul {
+    li {
+      &:hover a,
+      a:hover {
+        color: #1E88E5;
+        transform: scale(1.05);
+      }
+    }
+  }
 }
 
 main {
