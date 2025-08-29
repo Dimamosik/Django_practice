@@ -1,14 +1,20 @@
 {% extends 'main/layout.html' %}
+
 {% block title %}Delete News{% endblock %}
 
 {% block content %}
-<div class="container my-4">
-    <h1>Delete News</h1>
-    <p>Are you sure you want to delete "{{ object.title }}"?</p>
-    <form method="post">
+<div class="delete-news-container">
+    <h1 class="delete-news-title">Delete News</h1>
+    <p class="delete-news-message">
+        Are you sure you want to delete "<strong>{{ object.title }}</strong>"?
+    </p>
+
+    <form method="post" class="delete-news-form">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">Yes, delete</button>
-        <a href="{{ object.get_absolute_url }}" class="btn btn-secondary">Cancel</a>
+        <div class="delete-news-buttons">
+            <button type="submit" class="btn btn-delete">Yes, delete</button>
+            <a href="{{ object.get_absolute_url }}" class="btn btn-cancel">Cancel</a>
+        </div>
     </form>
 </div>
 {% endblock %}

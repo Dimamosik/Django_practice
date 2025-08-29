@@ -2,17 +2,19 @@
 {% block title %}News{% endblock %}
 
 {% block content %}
-<div class="container my-4">
-    <h1>News</h1>
-    <a href="{% url 'news_create' %}" class="btn btn-primary mb-3">Create News</a>
-    <ul class="list-group">
+<div class="news-list-container">
+    <h1 class="news-list-title">News</h1>
+    <a href="{% url 'news_create' %}" class="btn-news-create">Create News</a>
+    <ul class="news-list">
         {% for news in news_list %}
-            <li class="list-group-item">
-                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> - {{ news.author.username }}
+            <li class="news-card">
+                <a href="{{ news.get_absolute_url }}" class="news-card-title">{{ news.title }}</a>
+                <p class="news-card-meta">By {{ news.author.username }}</p>
             </li>
         {% empty %}
-            <li class="list-group-item">No news found.</li>
+            <p class="no-news">No news found.</p>
         {% endfor %}
     </ul>
 </div>
+
 {% endblock %}
