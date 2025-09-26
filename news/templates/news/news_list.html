@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% block title %}News{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1>News</h1>
+    <a href="{% url 'news_create' %}" class="btn btn-primary mb-3">Create News</a>
+    <ul class="list-group">
+        {% for news in news_list %}
+            <li class="list-group-item">
+                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> - {{ news.author.username }}
+            </li>
+        {% empty %}
+            <li class="list-group-item">No news found.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
