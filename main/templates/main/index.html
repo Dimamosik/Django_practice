@@ -1,14 +1,14 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Welcome{% endblock %}
+{% block title %}Main page{% endblock %}
+
 
 {% block content %}
-<div class="features text-center my-5">
-    <h1 class="mb-4">Welcome to BlogNest!</h1>
-    <p class="mb-4">Join our community to stay updated with the latest news and articles.</p>
-    <div class="d-flex justify-content-center gap-2">
-        <a href="{% url 'register' %}" class="button">Register</a>
-        <a href="{% url 'login' %}" class="button">Login</a>
+    <div class="features">
+        <h1>Main page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga voluptates deleniti voluptatem, debitis, tempora ab recusandae eos eligendi accusamus totam delectus blanditiis mollitia sint. Alias molestiae reiciendis ipsam minus maiores!</p>
+        <button class = "btn btn-warning"> on page about us</button>
     </div>
-</div>
+
+   
 {% endblock %}
