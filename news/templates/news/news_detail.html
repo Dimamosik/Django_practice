@@ -7,9 +7,22 @@
     <p>By {{ object.author.username }} | {{ object.created_at }}</p>
     <p>{{ object.content }}</p>
 
+ feature/photo_upload
+    {% if object.image %}
+        <img src="{{ object.image.url }}" alt="News image" class="img-fluid mt-3">
+    {% endif %}
+
+    {% if request.user == object.author %}
+        <a href="{% url 'news_update' object.pk %}" class="btn btn-warning mt-3">Edit</a>
+        <a href="{% url 'news_delete' object.pk %}" class="btn btn-danger mt-3">Delete</a>
+    {% endif %}
+</div>
+
+
     {% if request.user == object.author %}
         <a href="{% url 'news_update' object.pk %}" class="btn btn-warning">Edit</a>
         <a href="{% url 'news_delete' object.pk %}" class="btn btn-danger">Delete</a>
     {% endif %}
 </div>
+ main
 {% endblock %}
