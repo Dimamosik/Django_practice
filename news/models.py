@@ -1,13 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+ feature/photo_upload
 from django.core.exceptions import ValidationError
+
+ main
 
 class News(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+ feature/photo_upload
     image = models.ImageField(upload_to='news_images/', blank=True, null=True)
+
+ main
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -15,6 +21,7 @@ class News(models.Model):
         return self.title
 
     def get_absolute_url(self):
+ feature/photo_upload
         return reverse('news_detail', kwargs={'pk': self.pk})
     
     def get_title(self):
@@ -49,3 +56,6 @@ class News(models.Model):
         if not self.content or len(self.content.strip()) == 0:
             raise ValidationError({'content': "Content cannot be empty."})
         
+
+        return reverse('news_detail', kwargs={'pk': self.pk})
+ main
