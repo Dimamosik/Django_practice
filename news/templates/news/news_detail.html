@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+<div class="news-detail-container">
+    <h1 class="news-detail-title">{{ object.title }}</h1>
+    <p class="news-detail-meta">
+        By <strong>{{ object.author.username }}</strong> | {{ object.created_at|date:"d M Y H:i" }}
+    </p>
+
+    <div class="news-detail-content">
+        <p>{{ object.content }}</p>
+
+        {% if object.image %}
+            <img src="{{ object.image.url }}" alt="News image" class="news-detail-image">
+        {% endif %}
+    </div>
+
+    {% if request.user == object.author %}
+        <div class="news-detail-actions">
+            <a href="{% url 'news_update' object.pk %}" class="btn btn-edit">Edit</a>
+            <a href="{% url 'news_delete' object.pk %}" class="btn btn-delete">Delete</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
